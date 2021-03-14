@@ -33,7 +33,7 @@ class DetailViewModel(application: Application) : BaseViewModel(application) {
         }
     }
 
-    fun getBackgroundColor(bitmap: Bitmap) {
+    private fun getBackgroundColor(bitmap: Bitmap) {
         colorMutableLiveData.postValue(Result.loading())
         viewModelScope.launch(Dispatchers.Default) {
             val palette = PaletteUtils.getPredominantColor(bitmap)
